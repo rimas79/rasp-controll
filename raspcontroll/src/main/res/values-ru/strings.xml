@@ -1,0 +1,11 @@
+<resources>
+
+    <string name="action_settings">Настройки</string>
+    <string name="app_name">Управление Raspberry</string>
+    <string name="hello_world">Здравствуй, Мир!</string>
+    <string name="labelRaspURL">Адрес</string>
+    <string name="tbConnectCaption">Соединение</string>
+    <string name="tbLEDCaption">Светодиод</string>
+    <string name="tbSwitchCaption">Выключатель</string>
+
+</resources>

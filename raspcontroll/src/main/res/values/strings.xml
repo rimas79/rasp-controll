@@ -4,5 +4,9 @@
     <string name="app_name">Raspberry Control</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="labelRaspURL">URL</string>
+    <string name="tbConnectCaption">Connection</string>
+    <string name="tbLEDCaption">LED</string>
+    <string name="tbSwitchCaption">Switch</string>
 
 </resources>

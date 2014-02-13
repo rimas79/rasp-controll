@@ -1,5 +1,8 @@
 package com.rc.raspcontroll;
 
+import android.annotation.TargetApi;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -10,13 +13,20 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
+import android.widget.EditText;
 
 public class MainActivity extends ActionBarActivity {
+
+    static final String APP_PREFERENCES = "mysettings";
+    static final String APP_PREFERENCES_URL = "rasp_url";
+    SharedPreferences mSettings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mSettings = getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
@@ -46,10 +56,34 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onResume(){
+        super.onResume();
+        if (mSettings.contains(APP_PREFERENCES_URL)) {
+            EditText ed = (EditText) findViewById(R.id.raspURL);
+            ed.setText(mSettings.getString(APP_PREFERENCES_URL, ""));
+        }
+    }
+
+    @TargetApi(Build.VERSION_CODES.GINGERBREAD)
+    @Override
+    public void onPause() {
+        // TODO Auto-generated method stub
+        super.onPause();
+
+        EditText ed = (EditText) findViewById(R.id.raspURL);
+
+        SharedPreferences.Editor editor = mSettings.edit();
+        editor.putString(APP_PREFERENCES_URL, ed.getText().toString());
+        editor.apply();
+    }
+
     /**
      * A placeholder fragment containing a simple view.
      */
     public static class PlaceholderFragment extends Fragment {
+
+
 
         public PlaceholderFragment() {
         }

@@ -1,16 +1,71 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.rc.raspcontroll.MainActivity$PlaceholderFragment">
+<TableLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <TextView
-        android:text="@string/hello_world"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
 
-</RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/labelRaspURL"
+            android:id="@+id/labelURL" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/raspURL"
+            android:layout_weight="1"
+            android:inputType="textUri"
+            android:text="192.168.10.45:8080" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:baselineAligned="false"
+        android:layout_gravity="center_horizontal">
+
+        <ToggleButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tbConnect"
+            android:layout_column="1"
+            android:checked="false"
+            android:textOff="@string/tbConnectCaption"
+            android:textOn="@string/tbConnectCaption"
+            android:text="@string/tbConnectCaption" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <ToggleButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tbSwitchCaption"
+            android:id="@+id/tbSwitch"
+            android:layout_column="1"
+            android:textOff="@string/tbSwitchCaption"
+            android:textOn="@string/tbSwitchCaption" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <ToggleButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tbLEDCaption"
+            android:id="@+id/tbLED"
+            android:layout_column="1"
+            android:textOff="@string/tbLEDCaption"
+            android:textOn="@string/tbLEDCaption"
+            android:singleLine="false" />
+    </TableRow>
+</TableLayout>
