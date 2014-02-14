@@ -35,6 +35,7 @@
             android:id="@+id/tbConnect"
             android:layout_column="1"
             android:checked="false"
+            android:onClick="tbConn_Click"
             android:textOff="@string/tbConnectCaption"
             android:textOn="@string/tbConnectCaption"
             android:text="@string/tbConnectCaption" />

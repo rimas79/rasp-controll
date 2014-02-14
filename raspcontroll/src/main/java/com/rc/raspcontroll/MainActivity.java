@@ -4,7 +4,6 @@ import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -78,6 +77,10 @@ public class MainActivity extends ActionBarActivity {
         editor.apply();
     }
 
+    public void tbConn_Click(View view) {
+        return;
+    }
+
     /**
      * A placeholder fragment containing a simple view.
      */
@@ -94,6 +97,7 @@ public class MainActivity extends ActionBarActivity {
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
             return rootView;
         }
+
     }
 
 }
