@@ -1,6 +1,7 @@
 package com.rc.raspcontroll;
 
 import android.os.AsyncTask;
+import android.os.Message;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -67,7 +68,34 @@ public class RaspHTTPClient extends AsyncTask<String, Void, String> {
     protected void onPostExecute(String result){
         super.onPostExecute(result);
 
+//        MainActivity act = get
+// Just dummy message -- real implementation will put some meaningful data in it
+        Message msg = Message.obtain();
+
         if (result.equals("OK")) {
+//            MainActivity.setConnected(true);
+            msg.what = 999;
+            MainActivity.this._handler.sendMessage(msg);
+
+        }
+        else if (result.startsWith("TOKEN")) {
+            String[] res_tok = result.split("=", 2);
+            MainActivity.setRaps_token(res_tok[1]);
+        }
+        else if (result.equals("SW_ON")){
+            MainActivity.setSwitch(true);
+        }
+        else if (result.equals("SW_OFF")){
+            MainActivity.setSwitch(false);
+        }
+        else if (result.equals("LED_ON")){
+            MainActivity.setLED(true);
+        }
+        else if (result.equals("LED_OFF")){
+            MainActivity.setLED(false);
+        }
+        else {
+            MainActivity.setConnected(false);
         }
     }
 

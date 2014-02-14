@@ -29,30 +29,41 @@
         android:baselineAligned="false"
         android:layout_gravity="center_horizontal">
 
-        <ToggleButton
+        <Switch
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/tbConnect"
+            android:text="@string/tbConnectCaption"
+            android:id="@+id/swConnect"
             android:layout_column="1"
-            android:checked="false"
             android:onClick="tbConn_Click"
-            android:textOff="@string/tbConnectCaption"
-            android:textOn="@string/tbConnectCaption"
-            android:text="@string/tbConnectCaption" />
+            android:enabled="false"
+            android:checked="false" />
     </TableRow>
 
     <TableRow
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
 
-        <ToggleButton
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/tbSwitchCaption"
-            android:id="@+id/tbSwitch"
-            android:layout_column="1"
-            android:textOff="@string/tbSwitchCaption"
-            android:textOn="@string/tbSwitchCaption" />
+            android:id="@+id/bSwitch"
+            android:layout_column="1" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ivSwitchStatus"
+            android:layout_column="3"
+            android:cropToPadding="false"
+            android:adjustViewBounds="true"
+            android:visibility="visible"
+            android:baselineAlignBottom="false"
+            android:baseline="30dp"
+            android:background="@android:color/darker_gray"
+            android:scaleType="matrix"
+            android:padding="20dp" />
     </TableRow>
 
     <TableRow
@@ -69,4 +80,5 @@
             android:textOn="@string/tbLEDCaption"
             android:singleLine="false" />
     </TableRow>
+
 </TableLayout>
