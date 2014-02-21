@@ -1,7 +1,8 @@
-<TableLayout
+<TableLayout xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#d2d2ff">
 
     <TableRow
         android:layout_width="fill_parent"
@@ -54,16 +55,16 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/ivSwitchStatus"
+            android:id="@+id/ivSwStatus"
             android:layout_column="3"
             android:cropToPadding="false"
-            android:adjustViewBounds="true"
+            android:adjustViewBounds="false"
             android:visibility="visible"
             android:baselineAlignBottom="false"
-            android:baseline="30dp"
-            android:background="@android:color/darker_gray"
             android:scaleType="matrix"
-            android:padding="20dp" />
+            android:src="@drawable/state_button"
+            android:background="#ff0000" />
+
     </TableRow>
 
     <TableRow
@@ -79,6 +80,31 @@
             android:textOff="@string/tbLEDCaption"
             android:textOn="@string/tbLEDCaption"
             android:singleLine="false" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Button"
+            android:id="@+id/button" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ivNewStatus"
+            android:layout_column="3"
+            android:cropToPadding="false"
+            android:adjustViewBounds="false"
+            android:visibility="visible"
+            android:baselineAlignBottom="false"
+            android:scaleType="matrix"
+            android:src="@drawable/state_button"
+            android:background="#ff0000" />
     </TableRow>
 
 </TableLayout>

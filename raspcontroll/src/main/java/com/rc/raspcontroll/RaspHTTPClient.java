@@ -75,7 +75,7 @@ public class RaspHTTPClient extends AsyncTask<String, Void, String> {
         if (result.equals("OK")) {
 //            MainActivity.setConnected(true);
             msg.what = 999;
-            MainActivity.this._handler.sendMessage(msg);
+//            MainActivity.this._handler.sendMessage(msg);
 
         }
         else if (result.startsWith("TOKEN")) {
@@ -83,19 +83,19 @@ public class RaspHTTPClient extends AsyncTask<String, Void, String> {
             MainActivity.setRaps_token(res_tok[1]);
         }
         else if (result.equals("SW_ON")){
-            MainActivity.setSwitch(true);
+//            MainActivity.setSwitch(true);
         }
         else if (result.equals("SW_OFF")){
-            MainActivity.setSwitch(false);
+//            MainActivity.setSwitch(false);
         }
         else if (result.equals("LED_ON")){
-            MainActivity.setLED(true);
+//            MainActivity.setLED(true);
         }
         else if (result.equals("LED_OFF")){
-            MainActivity.setLED(false);
+//            MainActivity.setLED(false);
         }
         else {
-            MainActivity.setConnected(false);
+//            MainActivity.setConnected(false);
         }
     }
 
