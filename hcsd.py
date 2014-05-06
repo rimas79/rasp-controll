@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
 '''
@@ -6,14 +6,21 @@ Created on 08.03.2014
 
 @author: Denis
 '''
+import sys
+HCS_PATH="/home/hcs/home-control-server"
+
+sys.path.append(HCS_PATH)
+print(sys.path)
+sys.path.append(HCS_PATH+"/hx")
+print(sys.path)
 
 import logging
 from rasp_http_handle import MainRaspHTTPHandler
 from http.server import HTTPServer
-    
+
 if __name__ == '__main__':
     logger = logging.getLogger('rasp-serv')
-    log_hndl = logging.FileHandler('RS_current.log')
+    log_hndl = logging.FileHandler(HCS_PATH+'/RS_current.log')
     fmt = logging.Formatter("%(asctime)s %(levelname)s %(message)s")
     log_hndl.setFormatter(fmt)
     logger.addHandler(log_hndl)

@@ -9,8 +9,7 @@ from urllib.parse import urlparse, parse_qs
 from http.server import BaseHTTPRequestHandler
 from users import RaspControllUsers
 from raspberry import Raspberry
-from hx.hx_controller import hx_controller
-
+from hx_controller import hx_controller
 
 LED_BAR_HOST = '192.168.1.42'
 LED_BAR_PORT = 5000
@@ -42,6 +41,7 @@ class MainRaspHTTPHandler(BaseHTTPRequestHandler):
         self.wfile.write(resp.encode('utf-8'))
 
     def led_bar_handle(self, q):
+        self.__logger.debug("led_bar_handle")
         hx = hx_controller()
         if q.get('bright'):
             hx.setBright(int(q['bright'][0]))
@@ -57,6 +57,7 @@ class MainRaspHTTPHandler(BaseHTTPRequestHandler):
             hx.setDynMode(int(q['dyn_mode'][0]))
         if q.get('dyn_effect'):
             hx.setDynEff(int(q['dyn_effect'][0]))
+        self.__logger.debug(hx.p.getAll())
         hx.send_packet(LED_BAR_HOST, LED_BAR_PORT)
 
     def do_GET(self):

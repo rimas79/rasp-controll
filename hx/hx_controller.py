@@ -4,7 +4,7 @@ Created on 23.04.2014
 @author: Denis
 '''
 import socket
-from hx.hx_control_proto import *
+from hx_control_proto import *
 
 def static_light(prot):
     prot.product_mode = 1
