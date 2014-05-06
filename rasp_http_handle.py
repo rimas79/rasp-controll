@@ -9,6 +9,11 @@ from urllib.parse import urlparse, parse_qs
 from http.server import BaseHTTPRequestHandler
 from users import RaspControllUsers
 from raspberry import Raspberry
+from hx.hx_controller import hx_controller
+
+
+LED_BAR_HOST = '192.168.1.42'
+LED_BAR_PORT = 5000
 
 class MainRaspHTTPHandler(BaseHTTPRequestHandler):
     __logger = None 
@@ -35,7 +40,25 @@ class MainRaspHTTPHandler(BaseHTTPRequestHandler):
         self.send_header("Content-type", "text/html")
         self.end_headers()
         self.wfile.write(resp.encode('utf-8'))
-    
+
+    def led_bar_handle(self, q):
+        hx = hx_controller()
+        if q.get('bright'):
+            hx.setBright(int(q['bright'][0]))
+        if q.get('dynamic'):
+            hx.setDynamic(q['dynamic'][0])
+        if q.get('red') and q.get('green') and q.get('blue'):
+            hx.setRGB(int(q['red'][0]), int(q['green'][0]), int(q['blue'][0]))
+        if q.get('speed'):
+            hx.setSpeed(int(q['speed'][0]))
+        if q.get('pause'):
+            hx.setPause(int(q['pause'][0]))
+        if q.get('dyn_mode'):
+            hx.setDynMode(int(q['dyn_mode'][0]))
+        if q.get('dyn_effect'):
+            hx.setDynEff(int(q['dyn_effect'][0]))
+        hx.send_packet(LED_BAR_HOST, LED_BAR_PORT)
+
     def do_GET(self):
         self.log_request()
         req = urlparse(self.path.lower())
@@ -60,6 +83,11 @@ class MainRaspHTTPHandler(BaseHTTPRequestHandler):
                 self.send_resp("LED_OK")
             else:
                 self.send_resp("LED_ERR")
+        elif req.path == "/scene":
+            pass
+        elif req.path == "/led_bar":
+            self.led_bar_handle(q)
+            self.send_resp("LED_BAR_OK")
         else:
             self.send_resp("ERR")
         pass
