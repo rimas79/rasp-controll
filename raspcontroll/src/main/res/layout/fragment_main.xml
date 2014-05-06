@@ -4,31 +4,27 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="#d2d2ff">
 
-    <TableRow
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/labelRaspURL"
-            android:id="@+id/labelURL" />
+            android:id="@+id/labelURL"
+            android:layout_column="1" />
 
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:id="@+id/raspURL"
             android:layout_weight="1"
             android:inputType="textUri"
-            android:text="192.168.10.45:8080" />
-    </TableRow>
-
-    <TableRow
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:baselineAligned="false"
-        android:layout_gravity="center_horizontal">
+            android:text="http://192.168.1.34:8000"
+            android:layout_column="1" />
 
         <Switch
             android:layout_width="wrap_content"
@@ -39,72 +35,91 @@
             android:onClick="tbConn_Click"
             android:enabled="true"
             android:checked="false" />
-    </TableRow>
 
-    <TableRow
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
-
-        <Button
-            android:layout_width="wrap_content"
+        <SeekBar
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/tbSwitchCaption"
-            android:id="@+id/bSwitch"
-            android:layout_column="1" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/ivSwStatus"
-            android:layout_column="3"
-            android:cropToPadding="false"
-            android:adjustViewBounds="false"
-            android:visibility="visible"
-            android:baselineAlignBottom="false"
-            android:scaleType="matrix"
-            android:src="@drawable/state_button"
-            android:background="#ff0000" />
-
-    </TableRow>
-
-    <TableRow
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
-
-        <ToggleButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/tbLEDCaption"
-            android:id="@+id/tbLED"
+            android:id="@+id/seekBarRed"
             android:layout_column="1"
-            android:textOff="@string/tbLEDCaption"
-            android:textOn="@string/tbLEDCaption"
-            android:singleLine="false" />
+            android:indeterminate="false"
+            android:max="255"
+            android:progress="125"
+            android:background="#ff0000" />
 
+        <SeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/seekBarGreen"
+            android:layout_column="1"
+            android:max="255"
+            android:progress="74"
+            android:background="#05ff00" />
+
+        <SeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/seekBarBlue"
+            android:layout_column="1"
+            android:progress="200"
+            android:max="255"
+            android:background="#0000ff" />
+
+        <SeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/seekBarBright"
+            android:layout_column="1"
+            android:progress="100"
+            android:max="100"
+            android:background="#ffffff"
+            android:indeterminate="false" />
+    </LinearLayout>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinnerModes"
+            android:layout_column="1"
+            android:entries="@array/modes"
+            android:spinnerMode="dialog"
+            android:prompt="@string/sModesCaption" />
     </TableRow>
 
     <TableRow
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
 
-        <Button
+        <Spinner
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Button"
-            android:id="@+id/button" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/ivNewStatus"
-            android:layout_column="3"
-            android:cropToPadding="false"
-            android:adjustViewBounds="false"
-            android:visibility="visible"
-            android:baselineAlignBottom="false"
-            android:scaleType="matrix"
-            android:src="@drawable/state_button"
-            android:background="#ff0000" />
+            android:id="@+id/spinnerSpeeds"
+            android:layout_column="1"
+            android:entries="@array/speeds"
+            android:spinnerMode="dialog"
+            android:prompt="@string/sSpeedCaption" />
     </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinnerEffects"
+            android:layout_column="1"
+            android:entries="@array/effects"
+            android:spinnerMode="dialog"
+            android:prompt="@string/sEffectCaption" />
+    </TableRow>
+
+    <!--com.larswerkman.colorpicker.ColorPicker
+        android:id="@+id/color_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/-->
 
 </TableLayout>

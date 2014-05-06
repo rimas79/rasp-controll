@@ -7,5 +7,34 @@
     <string name="tbConnectCaption">Соединение</string>
     <string name="tbLEDCaption">Светодиод</string>
     <string name="tbSwitchCaption">Выключатель</string>
+    <string name="sModesCaption">Режимы</string>
+    <string name="sSpeedCaption">Скорость</string>
+    <string name="sEffectCaption">Эффекты</string>
+
+    <string-array name="modes">
+        <item>M01</item>
+        <item>M02</item>
+        <item>M03</item>
+        <item>M04</item>
+        <item>M05</item>
+    </string-array>
+
+    <string-array name="speeds">
+        <item>S01</item>
+        <item>S02</item>
+        <item>S03</item>
+        <item>S04</item>
+        <item>S05</item>
+    </string-array>
+
+    <string-array name="effects">
+        <item>E01</item>
+        <item>E02</item>
+        <item>E03</item>
+        <item>E04</item>
+        <item>E05</item>
+        <item>E06</item>
+        <item>E07</item>
+    </string-array>
 
 </resources>
