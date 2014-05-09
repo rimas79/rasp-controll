@@ -1,8 +1,10 @@
-<TableLayout xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="#d2d2ff">
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.rc.raspcontroll.MainActivityHxLed">
+
+    <!-- TODO: Update blank fragment layout -->
 
     <LinearLayout
         android:orientation="vertical"
@@ -14,8 +16,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/labelRaspURL"
-            android:id="@+id/labelURL"
-            android:layout_column="1" />
+            android:id="@+id/labelURL" />
 
         <EditText
             android:layout_width="fill_parent"
@@ -23,24 +24,22 @@
             android:id="@+id/raspURL"
             android:layout_weight="1"
             android:inputType="textUri"
-            android:text="http://192.168.1.34:8000"
-            android:layout_column="1" />
-
-        <Switch
+            android:text="http://192.168.1.34:8000" />
+        <ToggleButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/tbConnectCaption"
-            android:id="@+id/swConnect"
-            android:layout_column="1"
-            android:onClick="tbConn_Click"
+            android:text="@string/tbHXLEDCaption"
+            android:id="@+id/tbHXOnOff"
+            android:layout_gravity="center_horizontal|top"
+            android:textOff="@string/tbHXLEDCaptionOff"
+            android:textOn="@string/tbHXLEDCaptionOn"
+            android:onClick="tbHXLed_Click"
             android:enabled="true"
             android:checked="false" />
-
         <SeekBar
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:id="@+id/seekBarRed"
-            android:layout_column="1"
             android:indeterminate="false"
             android:max="255"
             android:progress="125"
@@ -48,78 +47,51 @@
 
         <SeekBar
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:id="@+id/seekBarGreen"
-            android:layout_column="1"
             android:max="255"
             android:progress="74"
             android:background="#05ff00" />
 
         <SeekBar
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:id="@+id/seekBarBlue"
-            android:layout_column="1"
             android:progress="200"
             android:max="255"
             android:background="#0000ff" />
 
         <SeekBar
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:id="@+id/seekBarBright"
-            android:layout_column="1"
             android:progress="100"
             android:max="100"
             android:background="#ffffff"
             android:indeterminate="false" />
-    </LinearLayout>
-
-    <TableRow
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
-
         <Spinner
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/spinnerModes"
-            android:layout_column="1"
             android:entries="@array/modes"
             android:spinnerMode="dialog"
             android:prompt="@string/sModesCaption" />
-    </TableRow>
-
-    <TableRow
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
 
         <Spinner
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/spinnerSpeeds"
-            android:layout_column="1"
             android:entries="@array/speeds"
             android:spinnerMode="dialog"
             android:prompt="@string/sSpeedCaption" />
-    </TableRow>
-
-    <TableRow
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
 
         <Spinner
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/spinnerEffects"
-            android:layout_column="1"
             android:entries="@array/effects"
             android:spinnerMode="dialog"
             android:prompt="@string/sEffectCaption" />
-    </TableRow>
+    </LinearLayout>
 
-    <!--com.larswerkman.colorpicker.ColorPicker
-        android:id="@+id/color_picker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/-->
-
-</TableLayout>
+</FrameLayout>

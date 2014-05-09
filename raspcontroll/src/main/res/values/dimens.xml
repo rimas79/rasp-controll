@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <!-- Standart dimens for the color wheel -->
     <dimen name="color_wheel_radius">124dp</dimen>
     <dimen name="color_wheel_thickness">8dp</dimen>
@@ -13,4 +14,8 @@
     <dimen name="bar_length">240dp</dimen>
     <dimen name="bar_pointer_radius">6dp</dimen>
     <dimen name="bar_pointer_halo_radius">14dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="navigation_drawer_width">240dp</dimen>
+
 </resources>

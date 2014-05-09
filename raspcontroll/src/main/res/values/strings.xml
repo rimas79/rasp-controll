@@ -16,7 +16,6 @@
         <item>M04</item>
         <item>M05</item>
     </string-array>
-
     <string-array name="speeds">
         <item>S01</item>
         <item>S02</item>
@@ -24,7 +23,6 @@
         <item>S04</item>
         <item>S05</item>
     </string-array>
-
     <string-array name="effects">
         <item>E01</item>
         <item>E02</item>
@@ -34,4 +32,11 @@
         <item>E06</item>
         <item>E07</item>
     </string-array>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_example">Example action</string>
+
 </resources>

@@ -10,6 +10,9 @@
     <string name="sModesCaption">Режимы</string>
     <string name="sSpeedCaption">Скорость</string>
     <string name="sEffectCaption">Эффекты</string>
+    <string name="tbHXLEDCaption">Включить ленту</string>
+    <string name="tbHXLEDCaptionOn">Выключить ленту</string>
+    <string name="tbHXLEDCaptionOff">Включить ленту</string>
 
     <string-array name="modes">
         <item>M01</item>
@@ -37,4 +40,14 @@
         <item>E07</item>
     </string-array>
 
+    <string-array name="navigate_array">
+        <item>Сцены</item>
+        <item>Настройки</item>
+        <item>Выход</item>
+    </string-array>
+
+    <string name="title_activity_drawer">DrawerActivity</string>
+    <string name="title_section1">Сцены</string>
+    <string name="title_section2">Настройки</string>
+    <string name="title_section3">Выход</string>
 </resources>
