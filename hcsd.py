@@ -7,7 +7,8 @@ Created on 08.03.2014
 @author: Denis
 '''
 import sys
-HCS_PATH="/home/hcs/home-control-server"
+#HCS_PATH="/home/hcs/home-control-server"
+HCS_PATH="./"
 
 sys.path.append(HCS_PATH)
 print(sys.path)

@@ -72,10 +72,16 @@ class hx_controller:
     def setDynEff(self, eff):
         self.p.dynamic_effect = eff
 
+    def setSwitch(self, state):
+        if state.lower() == 'true':
+            self.p.switch_on = 1
+        else:
+            self.p.switch_on = 0
+
     def send_packet(self, host, port):
         self.p.setAll()
         b = self.p.getAll()
-        self.p.printAll()
+#        self.p.printAll()
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         s.connect((host, port))
         s.sendall(b)

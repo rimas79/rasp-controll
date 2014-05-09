@@ -31,7 +31,7 @@ class protocol:
 			self.product = 0x00
 			self.product_mode = 0x01
 			self.static_dynamic = 0x01
-			self.switch_on = 0x01
+#			self.switch_on = 0x01
 			self.bar_no = 0x64 #0x32
 			self.red = 0xff
 			self.green = 0x06
